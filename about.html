@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About GameZone - Your Gaming Destination</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Tailwind Configuration
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "dark-bg": "#1A202C",
+              "light-bg": "#F9FAFB",
+              primary: "#3B82F6",
+              secondary: "#10B981",
+              "retro-primary": "#2563EB",
+            },
+          },
+        },
+      };
+    </script>
+    <script>
+      // Dark/Light Mode Toggle with Local Storage
+      function toggleDarkMode() {
+        const htmlElement = document.documentElement;
+        const isDarkMode = htmlElement.classList.toggle("dark");
+
+        // Save preference to local storage
+        localStorage.setItem("darkMode", isDarkMode);
+
+        // Update toggle button icon/text
+        updateDarkModeButtonState(isDarkMode);
+      }
+
+      // Update button state based on current mode
+      function updateDarkModeButtonState(isDark) {
+        const darkModeButton = document.getElementById("dark-mode-toggle");
+        darkModeButton.textContent = isDark ? "Light Mode" : "Dark Mode";
+      }
+
+      // Check saved preference on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedDarkMode = localStorage.getItem("darkMode") === "true";
+
+        if (savedDarkMode) {
+          document.documentElement.classList.add("dark");
+        }
+
+        // Initial button state setup
+        updateDarkModeButtonState(savedDarkMode);
+      });
+    </script>
+    <style>
+      /* Smooth transition for dark/light mode */
+      html {
+        transition: background-color 0.3s, color 0.3s;
+      }
+    </style>
+  </head>
+  <body class="bg-light-bg text-gray-800 dark:bg-dark-bg dark:text-gray-100 transition-all duration-300">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-lg">
+      <div class="container mx-auto flex justify-between items-center py-4 px-6">
+        <!-- Logo -->
+        <a href="index.html" class="text-2xl font-bold text-primary">GameZone</a>
+        <!-- Navigation -->
+        <nav class="flex space-x-6">
+          <a href="index.html" class="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-gray-100 transition-colors">Home</a>
+          <a href="#" class="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-gray-100 transition-colors">Games</a>
+          <a href="#" class="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-gray-100 transition-colors">About</a>
+        </nav>
+        <!-- Dark/Light Mode Toggle -->
+        <button
+          id="dark-mode-toggle"
+          onclick="toggleDarkMode()"
+          class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          Dark Mode
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto py-8 px-6">
+      <section class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold mb-6 text-primary dark:text-gray-200">About GameZone</h1>
+        
+        <div class="space-y-6 dark:text-gray-300">
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-retro-primary dark:text-blue-300">Our Mission</h2>
+            <p>GameZone is dedicated to bringing the best online gaming experiences to players around the world. We curate and host exciting, unblocked games that can be enjoyed anytime, anywhere.</p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-retro-primary dark:text-blue-300">Who We Are</h2>
+            <p>Founded in 2024, GameZone started with a simple passion: making great games accessible to everyone. Our team consists of gaming enthusiasts, developers, and community builders who believe in the power of play.</p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-retro-primary dark:text-blue-300">Our Community</h2>
+            <p>We're more than just a gaming platform. We're a community of players who love discovering new games, sharing experiences, and connecting through interactive entertainment.</p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-retro-primary dark:text-blue-300">Our Commitment</h2>
+            <p>We are committed to:</p>
+            <ul class="list-disc list-inside ml-4 mt-2">
+              <li>Providing high-quality, unblocked games</li>
+              <li>Ensuring a safe and enjoyable gaming environment</li>
+              <li>Supporting game developers and creators</li>
+              <li>Continuously improving our platform</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-retro-primary dark:text-blue-300">Contact Us</h2>
+            <p>Have questions or suggestions? We'd love to hear from you! Reach out to us at <a href="mailto:support@gamezone.com" class="text-primary dark:text-blue-400 hover:underline">support@gamezone.com</a>.</p>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 dark:bg-gray-800 py-6 text-center">
+      <div class="container mx-auto px-4">
+        <p class="text-gray-600 dark:text-gray-300">
+          © 2024 GameZone. All rights reserved.
+          <span class="mx-2 text-gray-400 dark:text-gray-500">|</span>
+          <a href="privacy.html" class="text-primary dark:text-blue-400 hover:underline">
+            Privacy Policy
+          </a>
+          <span class="mx-2 text-gray-400 dark:text-gray-500">|</span>
+          <a href="terms.html" class="text-primary dark:text-blue-400 hover:underline">
+            Terms of Service
+          </a>
+        </p>
+        <div class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+          GameZone is an independent platform and is not officially affiliated with game developers.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
