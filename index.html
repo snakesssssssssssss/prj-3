@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retro Bowl 25 Unblocked - Best Free Online Football Game</title>
+    <meta
+      name="description"
+      content="🏈 Play Retro Bowl 25 Unblocked for FREE - The best pixel art football game of 2024! Play without restrictions, directly in your browser!"
+    />
+    <meta
+      name="keywords"
+      content="retro bowl 25, unblocked games, online football game, pixel art game, free football game"
+    />
+    <link rel="canonical" href="https://retrobowl.click/game/retro-bowl-25" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Tailwind Configuration
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              "dark-bg": "#1A202C",
+              "light-bg": "#F9FAFB",
+              primary: "#3B82F6",
+              secondary: "#10B981",
+              "retro-primary": "#2563EB", // Added for consistency
+            },
+          },
+        },
+      };
+    </script>
+    <script>
+      // Dark/Light Mode Toggle with Local Storage
+      function toggleDarkMode() {
+        const htmlElement = document.documentElement;
+        const isDarkMode = htmlElement.classList.toggle('dark');
+        
+        // Save preference to local storage
+        localStorage.setItem('darkMode', isDarkMode);
+        
+        // Update toggle button icon/text
+        updateDarkModeButtonState(isDarkMode);
+      }
+
+      // Update button state based on current mode
+      function updateDarkModeButtonState(isDark) {
+        const darkModeButton = document.getElementById('dark-mode-toggle');
+        darkModeButton.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+      }
+
+      // Check saved preference on page load
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+        
+        if (savedDarkMode) {
+          document.documentElement.classList.add('dark');
+        }
+        
+        // Initial button state setup
+        updateDarkModeButtonState(savedDarkMode);
+      });
+    </script>
+    <style>
+      /* Smooth transition for dark/light mode */
+      html {
+        transition: background-color 0.3s, color 0.3s;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-light-bg text-gray-800 dark:bg-dark-bg dark:text-gray-100 transition-all duration-300"
+  >
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-lg">
+      <div
+        class="container mx-auto flex justify-between items-center py-4 px-6"
+      >
+        <!-- Logo -->
+        <a href="#" class="text-2xl font-bold text-primary">GameZone</a>
+        <!-- Navigation -->
+        <nav class="flex space-x-6">
+            <a href="#play-game" class="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-gray-100 transition-colors">Play Game</a>
+            <a href="#game-info" class="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-gray-100 transition-colors">Game Info</a>
+            <a href="#tips-tricks" class="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-gray-100 transition-colors">Tips & Tricks</a>
+            <a href="#proxies" class="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-gray-100 transition-colors">Proxies</a>
+            <a href="#other-games" class="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-gray-100 transition-colors">Other Games</a>
+          </nav>
+        <!-- Dark/Light Mode Toggle -->
+        <button
+          id="dark-mode-toggle"
+          onclick="toggleDarkMode()"
+          class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          Dark Mode
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Layout -->
+    <main class="container mx-auto py-8 px-6 grid grid-cols-12 gap-6">
+      <!-- Main Content (9/12) -->
+      <div class="col-span-9">
+        <!-- Game Section -->
+        <div class="w-full max-w-full bg-white dark:bg-gray-950 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800">
+            <div class="relative w-full game-container">
+                <!-- Phần hiển thị trước khi bắt đầu game -->
+                <div id="game-preview" class="relative w-full pb-[56.25%] bg-black max-h-[520px]">
+                    <div class="absolute inset-0">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfXoQTmhMZHKdIKRZvL7qA0BUSEaGvCMRagw&s" alt="Retro Bowl 25 Preview" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                            <button id="play-now-btn" class="group flex flex-col items-center transition-all duration-300 transform hover:scale-110">
+                                <div class="bg-white/20 p-4 rounded-full mb-2 group-hover:bg-white/30">
+                                    <svg class="w-16 h-16 text-white transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-white text-xl font-bold tracking-wider transform group-hover:scale-110 transition-transform duration-300"> Play Now </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Phần game container sẽ hiển thị khi bấm Play Now -->
+                <div id="game-container" class="hidden relative w-full pb-[56.25%] bg-black max-h-[520px]">
+                    <iframe id="game-iframe" src="game-url-here" class="absolute inset-0 w-full h-full" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        
+            <div class="flex items-center justify-between p-4 border-t border-gray-200 dark:border-gray-800">
+                <!-- Thông tin game và ảnh -->
+                <div class="flex items-center gap-3">
+                    <!-- Ảnh người chơi hoặc avatar game -->
+                    <div class="w-16 h-16 rounded-lg overflow-hidden bg-gray-300">
+                        <!-- Ảnh game hoặc người chơi -->
+                        <img 
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfXoQTmhMZHKdIKRZvL7qA0BUSEaGvCMRagw&s" 
+                            alt="Game Avatar" 
+                            class="w-full h-full object-cover" 
+                            onError="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfXoQTmhMZHKdIKRZvL7qA0BUSEaGvCMRagw&s';" 
+                        />
+                    </div>
+                    <!-- Tên game -->
+                    <div class="flex flex-col">
+                        <span class="text-primary dark:text-gray-200 font-bold">Retro Bowl 25</span>
+                        <span class="text-primary dark:text-gray-200 text-sm">Now Playing</span>
+                    </div>
+                </div>
+                <!-- Nút fullscreen -->
+                <div class="flex items-center gap-3">
+                    <button class="text-white p-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 12l-7 7-7-7h14z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            // Khi người dùng bấm nút "Play Now"
+            document.getElementById("play-now-btn").addEventListener("click", function() {
+                // Ẩn phần game preview
+                document.getElementById("game-preview").classList.add("hidden");
+                
+                // Hiển thị phần game container
+                document.getElementById("game-container").classList.remove("hidden");
+                
+                // Nếu cần, có thể thêm logic để load game iframe (nếu URL cần được tải động)
+                const gameIframe = document.getElementById("game-iframe");
+                gameIframe.src = "https://retrobowl.click/game/retro-bowl"; // Đặt URL game thực tế ở đây
+            });
+        </script>
+        
+        
+          
+        <!-- Game Info -->
+        <section
+          id="game-info"
+          class="mt-8 bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6"
+        >
+          <h2 class="text-2xl font-semibold mb-4 text-primary dark:text-gray-200">About Retro Bowl 25</h2>
+          <p class="dark:text-gray-300">
+            Retro Bowl 25 is a pixel art football game where you control your
+            team and compete in thrilling tournaments. Enjoy strategic gameplay,
+            immersive graphics, and endless fun!
+          </p>
+          <img
+            src="https://via.placeholder.com/600x300"
+            alt="Gameplay Screenshot"
+            class="rounded-lg mt-4"
+          />
+          <p class="mt-4 dark:text-gray-300">
+            Explore other gaming channels:
+            <a
+              href="https://example.com"
+              class="text-primary underline dark:text-blue-400"
+              target="_blank"
+              >GameChannel 1</a
+            >,
+            <a
+              href="https://example.com"
+              class="text-primary underline dark:text-blue-400"
+              target="_blank"
+              >GameChannel 2</a
+            >.
+          </p>
+        </section>
+        <!-- Section: Tips & Tricks -->
+        <section id="tips-tricks" class="mt-8 bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6">
+          <div class="container mx-auto px-4 max-w-7xl">
+            <h2
+              class="text-2xl font-semibold mb-4 text-primary dark:text-gray-200"
+            >
+              Tips & Tricks
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="bg-blue-50 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-retro-primary dark:text-blue-300 mb-4">
+                  1. Master the Controls
+                </h3>
+                <p class="dark:text-gray-300">
+                  Learn the basic and advanced controls to dominate your
+                  gameplay! Master the passing, running, and blocking techniques
+                  to outsmart your opponents.
+                </p>
+              </div>
+              <div class="bg-blue-50 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-retro-primary dark:text-blue-300 mb-4">
+                  2. Focus on Team Strategy
+                </h3>
+                <p class="dark:text-gray-300">
+                  Developing a strong team strategy is key to victory. Don't
+                  just focus on individual skills; work with your teammates to
+                  execute winning plays.
+                </p>
+              </div>
+              <div class="bg-blue-50 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-retro-primary dark:text-blue-300 mb-4">
+                  3. Upgrade Your Players
+                </h3>
+                <p class="dark:text-gray-300">
+                  Upgrading your players' abilities is crucial. Make sure to
+                  invest in the right stats to make your team even stronger!
+                </p>
+              </div>
+              <div class="bg-blue-50 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-retro-primary dark:text-blue-300 mb-4">
+                  4. Manage Your Time Well
+                </h3>
+                <p class="dark:text-gray-300">
+                  Effective time management during matches will help you balance
+                  offense and defense, giving you the edge in tight situations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section: Proxies -->
+        <section id="proxies" class="mt-8 bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6">
+          <div class="container mx-auto px-4 max-w-7xl">
+            <h2
+              class="text-2xl font-semibold mb-4 text-primary dark:text-gray-200"
+            >
+              Proxies
+            </h2>
+            <p class="text-lg text-center mb-4 dark:text-gray-300">
+              Looking for reliable proxies to access Retro Bowl 25 from
+              restricted regions? Here are some options:
+            </p>
+            <ul class="space-y-4">
+              <li class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-md">
+                <h4 class="font-semibold text-retro-primary dark:text-blue-300">
+                  Proxy Option 1: Secure VPN
+                </h4>
+                <p class="dark:text-gray-300">
+                  Use a VPN service to access the game securely from any region.
+                  Make sure to choose a reliable provider with high-speed
+                  servers.
+                </p>
+              </li>
+              <li class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-md">
+                <h4 class="font-semibold text-retro-primary dark:text-blue-300">
+                  Proxy Option 2: Proxy Server
+                </h4>
+                <p class="dark:text-gray-300">
+                  If VPN is unavailable, a proxy server can help you bypass
+                  geo-restrictions. Ensure you pick one that doesn't compromise
+                  your privacy or speed.
+                </p>
+              </li>
+              <li class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-md">
+                <h4 class="font-semibold text-retro-primary dark:text-blue-300">
+                  Proxy Option 3: Web Proxy
+                </h4>
+                <p class="dark:text-gray-300">
+                  For quick access, you can use a web proxy, but keep in mind
+                  the potential speed limitations and lack of encryption.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section: Other Games -->
+        <section id="other-games" class="mt-8 bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6">
+          <div class="container mx-auto px-4 max-w-7xl">
+            <h2
+              class="text-2xl font-semibold mb-4 text-primary dark:text-gray-200"
+            >
+              Other Games
+            </h2>
+            <p class="text-lg text-center mb-4 dark:text-gray-300">
+              Explore more exciting games similar to Retro Bowl 25:
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+              <div class="bg-blue-50 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-retro-primary dark:text-blue-300 mb-4">
+                  Football Legends
+                </h3>
+                <p class="dark:text-gray-300">
+                  Step into the world of legendary football players and lead
+                  your team to victory. A similar gameplay experience with a
+                  different twist!
+                </p>
+              </div>
+              <div class="bg-blue-50 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-retro-primary dark:text-blue-300 mb-4">
+                  Super Soccer Stars
+                </h3>
+                <p class="dark:text-gray-300">
+                  If you prefer soccer, Super Soccer Stars offers a fast-paced,
+                  action-packed soccer experience with unique controls.
+                </p>
+              </div>
+              <div class="bg-blue-50 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-retro-primary dark:text-blue-300 mb-4">
+                  Sports Dynasty
+                </h3>
+                <p class="dark:text-gray-300">
+                  Manage a sports dynasty, build your team, and compete in
+                  various tournaments across different sports disciplines!
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Sidebar (3/12) -->
+      <aside class="col-span-3 lg:w-[300px] shrink-0">
+        <div class="space-y-6 sticky top-6 flex flex-col items-center z-0">
+          <!-- Advertisement 1 -->
+          <div
+            class="w-[300px] h-[250px] bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm flex items-center justify-center"
+          >
+            <span class="text-gray-500 dark:text-gray-400">Advertisement</span>
+          </div>
+          <!-- Advertisement 2 -->
+          <div
+            class="w-[300px] h-[250px] bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm flex items-center justify-center"
+          >
+            <span class="text-gray-500 dark:text-gray-400">Advertisement</span>
+          </div>
+          <!-- Advertisement 3 -->
+          <div
+          class="w-[300px] h-[600px] bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm flex items-center justify-center"
+        >
+          <span class="text-gray-500 dark:text-gray-400">Advertisement</span>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-800 py-6 text-center">
+    <div class="container mx-auto px-4">
+      <p class="text-gray-600 dark:text-gray-300">
+        © 2024 GameZone. All rights reserved. 
+        <span class="mx-2 text-gray-400 dark:text-gray-500">|</span>
+        <a href="#" class="text-primary dark:text-blue-400 hover:underline">
+          Privacy Policy
+        </a>
+        <span class="mx-2 text-gray-400 dark:text-gray-500">|</span>
+        <a href="#" class="text-primary dark:text-blue-400 hover:underline">
+          Terms of Service
+        </a>
+      </p>
+      <div class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+        Retro Bowl 25 is a trademark of its respective owners. 
+        This website is an independent fan site and is not officially affiliated with the game developers.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
