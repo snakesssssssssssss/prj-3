@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retro Bowl 25 - Tactical Cyberpunk Strategy Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "cyber-bg": "#0A1128",
+                        "cyber-primary": "#00FFD1",
+                        "cyber-secondary": "#FF3366",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .list-disc {
+            list-style: none !important;
+
+        }
+    </style>
+    <style>
+        #image-modal {
+            display: none;
+            /* Ẩn modal mặc định */
+        }
+
+        #image-modal.active {
+            display: flex;
+            /* Hiển thị modal khi có class "active" */
+        }
+    </style>
+
+</head>
+
+<body class="bg-cyber-bg text-white font-sans tracking-tight">
+    <header class="bg-black/50 backdrop-blur-md fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="flex items-center space-x-4">
+                <img src="https://retrobowl.click/wp-content/uploads/2024/03/retro-bowl1jpg.png"
+                    alt="Retro Bowl 25 Logo" class="w-12 h-12 rounded-full" />
+                <h1 class="text-2xl font-bold text-cyber-primary glitch-text">
+                    Retro Bowl 25
+                </h1>
+            </div>
+            <nav class="space-x-6">
+                <a href="#play" class="text-white hover:text-cyber-primary transition">Play</a>
+                <a href="#how-to-play" class="text-white hover:text-cyber-primary transition">Guide</a>
+                <a href="#gallery" class="text-white hover:text-cyber-primary transition">Gallery</a>
+                <a href="#highlight-video" class="text-white hover:text-cyber-primary transition">Highlights</a>
+                <a href="#features" class="text-white hover:text-cyber-primary transition">Features</a>
+                <a href="#community" class="text-white hover:text-cyber-primary transition">Community</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <section class="min-h-screen flex items-center bg-gradient-to-br from-cyber-bg to-black/80">
+            <div class="container mx-auto grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 text-cyber-primary">
+                        Hack. Strategize. Survive.
+                    </h2>
+                    <p class="text-xl mb-8 text-gray-300">
+                        Command your elite cybernetic team through a dystopian digital
+                        battlefield. Every decision matters in this high-stakes tactical
+                        strategy game.
+                    </p>
+                    <div class="space-x-4">
+                        <a href="#play"
+                            class="bg-cyber-primary text-black px-6 py-3 rounded-full hover:bg-opacity-90 transition inline-block">
+                            Play Now
+                        </a>
+                        <button data-modal-target="trailer-modal" data-modal-toggle="trailer-modal"
+                            class="border-2 border-cyber-primary text-cyber-primary px-6 py-3 rounded-full hover:bg-cyber-primary hover:text-black transition inline-block">
+                            Watch Trailer
+                        </button>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <iframe id="youtube-trailer" width="500px" height="400px"
+                        src="https://www.youtube.com/embed/oK9UR7pHu8o?autoplay=1&modestbranding=1&rel=0&showinfo=0"
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal -->
+        <div id="trailer-modal" tabindex="-1"
+            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-screen bg-black/70">
+            <div class="relative w-full max-w-3xl mx-auto bg-black p-6 rounded-lg">
+                <button type="button" data-modal-hide="trailer-modal"
+                    class="absolute top-3 right-3 text-gray-300 hover:text-white">
+                    &#x2715; <!-- Close icon -->
+                </button>
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe id="trailer-video" width="100%" height="400px"
+                        src="https://www.youtube.com/embed/oK9UR7pHu8o?modestbranding=1&rel=0&showinfo=0"
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Play Now Section -->
+        <section id="play" class="py-20 bg-black/50">
+
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-12 text-center text-cyber-primary">
+                    Play Retro Bowl 25
+                </h2>
+                <div id="game-wrapper"
+                    class="max-w-4xl mx-auto bg-black rounded-xl overflow-hidden shadow-2xl relative">
+                    <div id="game-preview" class="relative w-full pb-[56.25%] bg-black max-h-[520px]">
+                        <div class="absolute inset-0">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfXoQTmhMZHKdIKRZvL7qA0BUSEaGvCMRagw&s"
+                                alt="Game Preview" class="w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                                <button id="play-now-btn"
+                                    class="group flex flex-col items-center transition-all duration-300 transform hover:scale-110">
+                                    <div class="bg-white/20 p-4 rounded-full mb-2 group-hover:bg-white/30">
+                                        <svg class="w-16 h-16 text-white transition-transform duration-300 group-hover:scale-110"
+                                            fill="currentColor" viewBox="0 0 24 24">
+                                            <path
+                                                d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <span
+                                        class="text-white text-xl font-bold tracking-wider transform group-hover:scale-110 transition-transform duration-300">Play
+                                        Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="game-container" class="hidden relative w-full pb-[56.25%] bg-black max-h-[520px]">
+                        <iframe id="game-iframe" src="" class="absolute inset-0 w-full h-full" frameborder="0"
+                            allowfullscreen></iframe>
+                    </div>
+
+                    <div class="flex mx-auto p-4 bg-white/15 backdrop-blur-md"
+                        style="justify-content: space-between; align-items: center;">
+                        <div class="flex items-center justify-between space-x-6">
+                            <div class="flex items-center gap-3 flex-1">
+                                <div class="w-16 h-16 rounded-lg overflow-hidden bg-gray-300">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfXoQTmhMZHKdIKRZvL7qA0BUSEaGvCMRagw&s"
+                                        alt="Game Avatar" class="w-full h-full object-cover"
+                                        onError="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfXoQTmhMZHKdIKRZvL7qA0BUSEaGvCMRagw&s';" />
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-primary dark:text-gray-200 font-bold">Retro Bowl 25</span>
+                                    <span class="text-primary dark:text-gray-200 text-sm">Now Playing</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between space-x-6">
+                            <button onclick="window.open('about:blank', '_blank')"
+                                class="text-white px-6 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg flex-1 text-center whitespace-nowrap">
+                                <span>Proxy 1</span>
+                            </button>
+                            <button onclick="window.open('about:blank', '_blank')"
+                                class="text-white px-6 py-2 bg-green-600 hover:bg-green-500 rounded-lg flex-1 text-center whitespace-nowrap">
+                                <span>Proxy 2</span>
+                            </button>
+                            <button onclick="window.open('about:blank', '_blank')"
+                                class="text-white px-6 py-2 bg-red-600 hover:bg-red-500 rounded-lg flex-1 text-center whitespace-nowrap">
+                                <span>Proxy 3</span>
+                            </button>
+                        </div>
+                        <div class="flex items-center justify-between space-x-6">
+                            <button id="fullscreen-btn"
+                                class="text-white p-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
+                                <svg id="fullscreen-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M4 4h6V2H2v8h2V4zm16 0v6h2V2h-8v2h6zM4 20v-6H2v8h8v-2H4zm16-6v6h-6v2h8v-8h-2z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const fullscreenBtn = document.getElementById("fullscreen-btn");
+                        const gameWrapper = document.getElementById("game-wrapper");
+
+                        fullscreenBtn.addEventListener("click", function () {
+                            if (gameWrapper) {
+                                gameWrapper.requestFullscreen().catch((err) => {
+                                    console.error(`Error attempting fullscreen: ${err.message}`);
+                                });
+                            }
+                        });
+                        document.getElementById("play-now-btn").addEventListener("click", function () {
+                            document.getElementById("game-preview").classList.add("hidden");
+                            document.getElementById("game-container").classList.remove("hidden");
+
+                            const gameIframe = document.getElementById("game-iframe");
+                            gameIframe.src = "https://retrobowl.click/game/retro-bowl";
+                        });
+                    });
+                </script>
+
+        </section>
+
+        <section id="how-to-play" class="py-20 bg-black/40">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8 text-cyber-primary">
+                    How to Play Retro Bowl 25 🎮
+                </h2>
+                <p class="text-xl text-white mb-8">
+                    Ready to kick off your journey in Retro Bowl 25? Follow these simple steps to become a champion in
+                    this nostalgic, action-packed football game. 🏈
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Step 1: Setting Up Your Team -->
+                    <div class="bg-black/50 p-6 rounded-xl hover:scale-105 transition">
+                        <h3 class="text-2xl font-semibold mb-4 text-cyber-secondary">1. 🏆 Setting Up Your Team</h3>
+                        <p class="text-white text-sm md:text-base">
+                            The first step is to build your dream team! Choose your team or create a custom one by
+                            selecting your favorite players for key positions such as quarterback, wide receivers, and
+                            running backs. 🚀
+                        </p>
+                        <p class="text-white text-sm md:text-base">
+                            Customize your team's name, logo, and colors to make it truly yours! You’ll also want to
+                            balance your team's strengths and weaknesses for a well-rounded squad. ⚖️
+                        </p>
+                    </div>
+
+                    <!-- Step 2: Learning the Controls -->
+                    <div class="bg-black/50 p-6 rounded-xl hover:scale-105 transition">
+                        <h3 class="text-2xl font-semibold mb-4 text-cyber-secondary">2. 🎮 Learning the Controls</h3>
+                        <p class="text-white text-sm md:text-base">
+                            Before you dive into the action, get familiar with the controls! 🕹️ Here's a breakdown:
+                        <ul class="list-disc text-left pl-6 mt-4">
+                            <li>🏃‍♂️ **Run**: Move your players using the arrow keys or swipe (mobile).</li>
+                            <li>🏈 **Pass**: Tap the screen or click to throw passes.</li>
+                            <li>🛡️ **Defense**: Block and tackle opponents to stop them from scoring!</li>
+                        </ul>
+                        Practice in training mode to master these controls before your first match! ✨
+                        </p>
+                    </div>
+
+                    <!-- Step 3: Playing Your First Match -->
+                    <div class="bg-black/50 p-6 rounded-xl hover:scale-105 transition">
+                        <h3 class="text-2xl font-semibold mb-4 text-cyber-secondary">3. 🏈 Playing Your First Match</h3>
+                        <p class="text-white text-sm md:text-base">
+                            It’s game time! Start by playing your first match against an AI or another player. 💥 Here’s
+                            how:
+                        <ul class="list-disc text-left pl-6 mt-4">
+                            <li>⚡ **Offense**: Use quick passes and strategic running plays to move the ball down the
+                                field.</li>
+                            <li>🏆 **Score**: Aim for touchdowns by getting the ball into the opponent’s end zone!</li>
+                            <li>🛡️ **Defense**: Keep the opponent from scoring by blocking passes and tackling their
+                                ball carrier!</li>
+                        </ul>
+                        Don’t worry if you make mistakes—every play is a learning opportunity! 🌟
+                        </p>
+                    </div>
+
+                    <!-- Step 4: Managing Team Stats -->
+                    <div class="bg-black/50 p-6 rounded-xl hover:scale-105 transition">
+                        <h3 class="text-2xl font-semibold mb-4 text-cyber-secondary">4. 📊 Managing Team Stats</h3>
+                        <p class="text-white text-sm md:text-base">
+                            As you win matches, you’ll earn points to improve your team. 📈 Check individual player
+                            stats and level up your athletes’ abilities. You can enhance their:
+                        <ul class="list-disc text-left pl-6 mt-4">
+                            <li>💨 **Speed**: For faster runs and tackles.</li>
+                            <li>🎯 **Accuracy**: Improve passing precision.</li>
+                            <li>🛡️ **Defense**: Make your players harder to break through.</li>
+                        </ul>
+                        Upgrading players is essential for staying competitive as the game progresses! 💪
+                        </p>
+                    </div>
+
+                    <!-- Step 5: Competing in Tournaments -->
+                    <div class="bg-black/50 p-6 rounded-xl hover:scale-105 transition">
+                        <h3 class="text-2xl font-semibold mb-4 text-cyber-secondary">5. 🏆 Competing in Tournaments</h3>
+                        <p class="text-white text-sm md:text-base">
+                            Once your team is ready, it's time to compete in tournaments! Enter the league and play
+                            against other teams in a knockout-style competition. 🏅
+                        <ul class="list-disc text-left pl-6 mt-4">
+                            <li>🥇 **Tournament Format**: Win matches to advance to the next round.</li>
+                            <li>🏅 **Championship**: Compete for the **Retro Bowl Championship** trophy!</li>
+                            <li>🎁 **Rewards**: Earn rewards based on your performance, such as new players, upgrades,
+                                and exclusive content!</li>
+                        </ul>
+                        The tournaments are a thrilling challenge, and winning will make you a champion! 🏆
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="highlight-video" class="py-20 bg-black/40">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-12 text-cyber-primary">
+                    Epic Highlights of Retro Bowl 25 🎬
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+
+                    <!-- Video Highlight 1 -->
+                    <div class="bg-black/50 p-6 rounded-xl hover:scale-105 transition">
+                        <h3 class="text-xl font-semibold mb-4 text-cyber-secondary text-center">
+                            The Ultimate Touchdown 🎮
+                        </h3>
+                        <div class="relative mb-4">
+                            <iframe class="w-full h-64"
+                                src="https://www.youtube.com/embed/RTqegH5RJmM?autoplay=1&mute=0" frameborder="0"
+                                allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-left">
+                            Watch stunning touchdown moments and intense plays in Retro Bowl 25!
+                        </p>
+                    </div>
+
+                    <!-- Video Highlight 2 -->
+                    <div class="bg-black/50 p-6 rounded-xl hover:scale-105 transition">
+                        <h3 class="text-xl font-semibold mb-4 text-cyber-secondary text-center">
+                            Legendary Block 🏈
+                        </h3>
+                        <div class="relative mb-4">
+                            <iframe class="w-full h-64"
+                                src="https://www.youtube.com/embed/RTqegH5RJmM?autoplay=1&mute=0" frameborder="0"
+                                allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-left">
+                            Check out the strategic blocks that make all the difference in the game!
+                        </p>
+                    </div>
+
+                    <!-- Video Highlight 3 -->
+                    <div class="bg-black/50 p-6 rounded-xl hover:scale-105 transition">
+                        <h3 class="text-xl font-semibold mb-4 text-cyber-secondary text-center">
+                            The Road to Glory 🏆
+                        </h3>
+                        <div class="relative mb-4">
+                            <iframe class="w-full h-64"
+                                src="https://www.youtube.com/embed/RTqegH5RJmM?autoplay=1&mute=0" frameborder="0"
+                                allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-left">
+                            Relive the greatest moments as you rise to become the Retro Bowl 25 champion!
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="py-20 bg-black/40">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-12 text-cyber-primary">
+                    Gallery of Retro Bowl 25 🎨
+                </h2>
+                <div class="grid grid-cols-5 gap-2">
+                    <div>
+                        <img class="gallery-image h-auto max-w-full rounded-lg cursor-pointer"
+                            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="Image 1">
+                    </div>
+                    <div>
+                        <img class="gallery-image h-auto max-w-full rounded-lg cursor-pointer"
+                            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="Image 2">
+                    </div>
+                    <div>
+                        <img class="gallery-image h-auto max-w-full rounded-lg cursor-pointer"
+                            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="Image 3">
+                    </div>
+                    <div>
+                        <img class="gallery-image h-auto max-w-full rounded-lg cursor-pointer"
+                            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="Image 4">
+                    </div>
+                    <div>
+                        <img class="gallery-image h-auto max-w-full rounded-lg cursor-pointer"
+                            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="Image 1">
+                    </div>
+                    <div>
+                        <img class="gallery-image h-auto max-w-full rounded-lg cursor-pointer"
+                            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="Image 2">
+                    </div>
+                    <div>
+                        <img class="gallery-image h-auto max-w-full rounded-lg cursor-pointer"
+                            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="Image 3">
+                    </div>
+                    <div>
+                        <img class="gallery-image h-auto max-w-full rounded-lg cursor-pointer"
+                            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="Image 4">
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div id="image-modal" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center">
+                    <div class="relative">
+                        <button id="modal-close" class="absolute top-2 right-2 text-white text-2xl">
+                            &#x2715;
+                        </button>
+                        <img id="modal-image" class="max-w-full max-h-screen rounded-lg" src="" alt="Modal Image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-20 bg-black/30">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-12 text-cyber-primary">
+                    Retro Bowl 25 Game Features ⚡
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+
+                    <!-- Feature 1: Classic Football Gameplay -->
+                    <div class="bg-black/50 p-6 rounded-xl hover:scale-105 transition">
+                        <h3 class="text-xl font-semibold mb-4 text-cyber-secondary text-center">
+                            Classic Football Gameplay 🏈
+                        </h3>
+                        <p class="text-left">
+                            Immerse yourself in <strong>Retro Bowl 25</strong> with classic football mechanics and
+                            retro-style graphics.
+                            Experience fast-paced, intuitive gameplay with easy controls that offer a nostalgic yet
+                            modern twist. 🕹️
+                        </p>
+                    </div>
+
+                    <!-- Feature 2: Dynamic Team Management -->
+                    <div class="bg-black/50 p-6 rounded-xl hover:scale-105 transition">
+                        <h3 class="text-xl font-semibold mb-4 text-cyber-secondary text-center">
+                            Dynamic Team Management ⚙️
+                        </h3>
+                        <p class="text-left">
+                            Build and manage your dream football team. Train players, adjust tactics, and make crucial
+                            decisions to guide your team to success. 🔥
+                        </p>
+                    </div>
+
+                    <!-- Feature 3: Thrilling Season Play -->
+                    <div class="bg-black/50 p-6 rounded-xl hover:scale-105 transition">
+                        <h3 class="text-xl font-semibold mb-4 text-cyber-secondary text-center">
+                            Thrilling Season Play 🏆
+                        </h3>
+                        <p class="text-left">
+                            Play through a full season with high-stakes matches. Compete for the Retro Bowl victory
+                            while improving your team along the way. 🎯
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <section id="community" class="py-20">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-12 text-cyber-primary">
+                    Join the Rebellion
+                </h2>
+                <div class="max-w-2xl mx-auto">
+                    <input type="email" placeholder="Enter your email for updates"
+                        class="w-full p-4 bg-black/50 rounded-full text-white mb-4" />
+                    <button class="bg-cyber-secondary text-white px-8 py-4 rounded-full hover:opacity-90 transition">
+                        Sign Up
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="bg-black/50 py-8 text-center">
+        <p class="text-gray-400">
+            &copy; 2024 Retro Bowl 25. All digital rights reserved.
+        </p>
+    </footer>
+    <script>
+        // Open modal
+        document.querySelectorAll('[data-modal-toggle]').forEach(button => {
+            button.addEventListener('click', function () {
+                const modalId = this.getAttribute('data-modal-target');
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                }
+            });
+        });
+
+        // Close modal
+        document.querySelectorAll('[data-modal-hide]').forEach(button => {
+            button.addEventListener('click', function () {
+                const modal = this.closest('.fixed');
+                if (modal) {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }
+            });
+        });
+    </script>
+    <script>
+        // Select all gallery images and the modal elements
+        const galleryImages = document.querySelectorAll('.gallery-image');
+        const modal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image');
+        const closeModalButton = document.getElementById('modal-close');
+
+        // Add click event for each image
+        galleryImages.forEach((img) => {
+            img.addEventListener('click', () => {
+                modal.classList.add('active');
+                modalImage.src = img.src; // Set the clicked image as the modal image
+            });
+        });
+
+        // Close modal on button click
+        closeModalButton.addEventListener('click', () => {
+            modal.classList.remove('active');
+            modalImage.src = ''; // Clear the image source
+        });
+
+        // Close modal on clicking outside the image
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                modalImage.src = ''; // Clear the image source
+            }
+        });
+    </script>
+</body>
+
+</html>
